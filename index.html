@@ -1,0 +1,1704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Raginee Sudhir Chaurey | Data Journalist & Video Producer</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=DM+Sans:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght,SOFT,WONK@9..144,400..800,40,1&display=swap" rel="stylesheet">
+
+<style>
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --ink: #10202a;
+  --ink-2: #243947;
+  --muted: #66757c;
+  --paper: #fbf6ea;
+  --paper-2: #f0eadb;
+  --cream: #fffdf7;
+  --line: #d7cdbb;
+  --blue: #1e5d83;
+  --blue-soft: #d8e8ee;
+  --sage: #6c8b7a;
+  --sage-soft: #e5eee8;
+  --clay: #b85c45;
+  --clay-soft: #f2d9cf;
+  --gold: #d7a73f;
+  --shadow: 0 24px 70px rgba(16, 32, 42, 0.14);
+  --soft-shadow: 0 16px 40px rgba(16, 32, 42, 0.08);
+  --serif: "Fraunces", Georgia, serif;
+  --sans: "DM Sans", system-ui, sans-serif;
+  --mono: "DM Mono", monospace;
+  --wide: 1180px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 12% 8%, rgba(216, 232, 238, 0.9), transparent 26rem),
+    radial-gradient(circle at 88% 20%, rgba(242, 217, 207, 0.74), transparent 24rem),
+    linear-gradient(rgba(16, 32, 42, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 32, 42, 0.025) 1px, transparent 1px),
+    var(--paper);
+  background-size: auto, auto, 36px 36px, 36px 36px, auto;
+  font-family: var(--sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+.topbar {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 50;
+  height: 66px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(1rem, 3vw, 2.25rem);
+  border-bottom: 1px solid rgba(16, 32, 42, 0.12);
+  background: rgba(251, 246, 234, 0.88);
+  backdrop-filter: blur(18px);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.72rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.brand-mark {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--cream);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+}
+
+.brand span:last-child {
+  font-family: var(--serif);
+  font-weight: 760;
+  letter-spacing: -0.01em;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.3rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--ink-2);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav-links a:hover {
+  color: var(--clay);
+}
+
+.hero {
+  max-width: var(--wide);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 118px clamp(1rem, 3vw, 2rem) 5rem;
+  display: grid;
+  grid-template-columns: minmax(0, 0.94fr) minmax(380px, 1.06fr);
+  gap: clamp(2.2rem, 5vw, 5rem);
+  align-items: center;
+}
+
+.eyebrow {
+  width: fit-content;
+  margin-bottom: 1.2rem;
+  padding: 0.42rem 0.72rem;
+  border: 1px solid rgba(16, 32, 42, 0.16);
+  border-radius: 999px;
+  background: var(--cream);
+  color: var(--blue);
+  box-shadow: var(--soft-shadow);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--serif);
+}
+
+h1 {
+  max-width: 840px;
+  font-size: clamp(3.15rem, 7.4vw, 7.35rem);
+  font-weight: 790;
+  line-height: 0.9;
+  letter-spacing: -0.045em;
+}
+
+h1 em {
+  color: var(--blue);
+  font-style: italic;
+  font-weight: 500;
+}
+
+.hero-dek {
+  max-width: 660px;
+  margin-top: 1.7rem;
+  color: var(--ink-2);
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  line-height: 1.78;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 2rem;
+}
+
+.btn {
+  min-height: 45px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.72rem 1.08rem;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  background: var(--cream);
+  box-shadow: 4px 4px 0 var(--ink);
+  color: var(--ink);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.btn:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+.btn.primary {
+  background: var(--clay);
+  color: var(--cream);
+}
+
+.media-wall {
+  position: relative;
+  min-height: 660px;
+}
+
+.portrait-frame {
+  position: absolute;
+  left: 2%;
+  top: 4%;
+  z-index: 3;
+  width: min(360px, 58%);
+  padding: 0.75rem;
+  border: 1px solid rgba(16, 32, 42, 0.16);
+  border-radius: 24px;
+  background: rgba(255, 253, 247, 0.92);
+  box-shadow: var(--shadow);
+  transform: rotate(-2.2deg);
+}
+
+.portrait-frame::before,
+.field-frame::before,
+.producer-card::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  width: 88px;
+  height: 26px;
+  border: 1px solid rgba(16, 32, 42, 0.1);
+  background: rgba(255, 253, 247, 0.7);
+  transform: translateX(-50%) rotate(-2deg);
+}
+
+.portrait-photo,
+.portrait-fallback {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: 18px;
+  object-fit: cover;
+  background: var(--blue-soft);
+}
+
+.portrait-fallback {
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.portrait-fallback img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 0.7rem;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.field-frame {
+  position: absolute;
+  right: 0;
+  top: 15%;
+  z-index: 2;
+  width: min(430px, 66%);
+  padding: 0.75rem;
+  border-radius: 22px;
+  background: rgba(255, 253, 247, 0.88);
+  box-shadow: var(--shadow);
+  transform: rotate(2deg);
+}
+
+.field-photo,
+.field-fallback {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 16px;
+  object-fit: cover;
+  background:
+    linear-gradient(135deg, rgba(30, 93, 131, 0.18), rgba(108, 139, 122, 0.2)),
+    var(--sage-soft);
+}
+
+.field-fallback {
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.field-fallback svg {
+  width: 96%;
+}
+
+.producer-card {
+  position: absolute;
+  left: 15%;
+  bottom: 5%;
+  z-index: 4;
+  width: min(430px, 72%);
+  padding: 1rem;
+  border: 1px solid rgba(16, 32, 42, 0.16);
+  border-radius: 24px;
+  background: var(--ink);
+  color: var(--cream);
+  box-shadow: var(--shadow);
+  transform: rotate(1deg);
+}
+
+.mini-video {
+  position: relative;
+  min-height: 180px;
+  overflow: hidden;
+  border-radius: 18px;
+  background:
+    linear-gradient(120deg, rgba(30, 93, 131, 0.9), rgba(184, 92, 69, 0.85)),
+    var(--ink);
+}
+
+.mini-video::before {
+  content: "";
+  position: absolute;
+  inset: -80px;
+  background:
+    radial-gradient(circle at 28% 30%, rgba(255,255,255,.34), transparent 11rem),
+    radial-gradient(circle at 76% 66%, rgba(215,167,63,.45), transparent 12rem);
+  animation: drift 8s ease-in-out infinite alternate;
+}
+
+.mini-video::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: rgba(255, 253, 247, 0.9);
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 12px rgba(255, 253, 247, 0.14);
+}
+
+.play-triangle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 2;
+  width: 0;
+  height: 0;
+  border-top: 11px solid transparent;
+  border-bottom: 11px solid transparent;
+  border-left: 17px solid var(--ink);
+  transform: translate(-35%, -50%);
+}
+
+@keyframes drift {
+  to {
+    transform: translate(36px, 28px) rotate(8deg);
+  }
+}
+
+.producer-card p {
+  margin-top: 0.8rem;
+  color: rgba(255, 253, 247, 0.72);
+  font-size: 0.92rem;
+}
+
+.stats-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--cream);
+}
+
+.stat {
+  padding: 1rem clamp(1rem, 3vw, 2rem);
+  border-right: 1px solid rgba(255, 253, 247, 0.18);
+}
+
+.stat:last-child {
+  border-right: 0;
+}
+
+.stat strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: clamp(1.9rem, 3.2vw, 3rem);
+  line-height: 1;
+}
+
+.stat span {
+  display: block;
+  margin-top: 0.45rem;
+  color: rgba(255, 253, 247, 0.62);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+section {
+  padding: clamp(4.5rem, 7vw, 7rem) clamp(1rem, 3vw, 2rem);
+}
+
+.inner {
+  max-width: var(--wide);
+  margin: 0 auto;
+}
+
+.section-kicker {
+  width: fit-content;
+  margin-bottom: 1rem;
+  color: var(--blue);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.section-head {
+  display: grid;
+  grid-template-columns: minmax(0, 0.96fr) minmax(280px, 0.7fr);
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: end;
+  margin-bottom: 3rem;
+}
+
+h2 {
+  font-size: clamp(2.1rem, 4.3vw, 4.4rem);
+  font-weight: 780;
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+}
+
+.section-copy {
+  color: var(--ink-2);
+  line-height: 1.78;
+}
+
+.work {
+  background: rgba(255, 253, 247, 0.62);
+  border-top: 1px solid rgba(16, 32, 42, 0.12);
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1.4rem;
+}
+
+.filter-btn {
+  min-height: 36px;
+  padding: 0.42rem 0.78rem;
+  border: 1px solid rgba(16, 32, 42, 0.18);
+  border-radius: 999px;
+  background: var(--cream);
+  color: var(--ink-2);
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: 0.67rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: var(--ink);
+  color: var(--cream);
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.work-card {
+  position: relative;
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+  padding: 1.2rem;
+  overflow: hidden;
+  border: 1px solid rgba(16, 32, 42, 0.14);
+  border-radius: 28px;
+  background: rgba(255, 253, 247, 0.9);
+  box-shadow: var(--soft-shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.work-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 52px rgba(16, 32, 42, 0.14);
+}
+
+.work-card.hidden {
+  display: none;
+}
+
+.card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.pill {
+  width: fit-content;
+  padding: 0.28rem 0.56rem;
+  border-radius: 999px;
+  background: var(--blue-soft);
+  color: var(--blue);
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.pill.enterprise {
+  background: var(--sage-soft);
+  color: var(--sage);
+}
+
+.pill.video {
+  background: var(--clay-soft);
+  color: var(--clay);
+}
+
+.date {
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  white-space: nowrap;
+}
+
+.work-card h3 {
+  margin-bottom: 0.9rem;
+  font-size: 1.55rem;
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+}
+
+.work-card p {
+  flex: 1;
+  color: var(--ink-2);
+  font-size: 0.94rem;
+}
+
+.why {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.work-card a {
+  width: fit-content;
+  margin-top: 1.1rem;
+  color: var(--ink);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-decoration-color: var(--gold);
+  text-decoration-thickness: 2px;
+  text-transform: uppercase;
+}
+
+.scrolly {
+  background:
+    linear-gradient(90deg, rgba(30, 93, 131, 0.08), transparent 42%),
+    var(--paper-2);
+  border-block: 1px solid rgba(16, 32, 42, 0.12);
+}
+
+.scrolly-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.74fr) minmax(420px, 1fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: start;
+}
+
+.steps {
+  display: grid;
+  gap: 62vh;
+  padding: 15vh 0 30vh;
+}
+
+.step {
+  max-width: 450px;
+  padding: 1.2rem;
+  border: 1px solid rgba(16, 32, 42, 0.14);
+  border-radius: 26px;
+  background: rgba(255, 253, 247, 0.72);
+  box-shadow: var(--soft-shadow);
+  opacity: 0.45;
+  transform: translateY(12px);
+  transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease;
+}
+
+.step.active {
+  opacity: 1;
+  transform: translateY(0);
+  background: var(--cream);
+}
+
+.step-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+  color: var(--blue);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.step h3 {
+  margin-bottom: 0.85rem;
+  font-size: clamp(1.8rem, 3vw, 2.45rem);
+  line-height: 1;
+  letter-spacing: -0.025em;
+}
+
+.evidence-board {
+  position: sticky;
+  top: 90px;
+  min-height: 690px;
+  padding: clamp(1rem, 2vw, 1.4rem);
+  overflow: hidden;
+  border: 1px solid rgba(16, 32, 42, 0.16);
+  border-radius: 34px;
+  background:
+    radial-gradient(circle at 20% 18%, rgba(215, 167, 63, 0.28), transparent 14rem),
+    radial-gradient(circle at 85% 68%, rgba(108, 139, 122, 0.25), transparent 16rem),
+    #d9cbb4;
+  box-shadow: var(--shadow);
+}
+
+.board-note {
+  position: absolute;
+  border: 1px solid rgba(16, 32, 42, 0.16);
+  border-radius: 24px;
+  background: var(--cream);
+  box-shadow: var(--soft-shadow);
+}
+
+.board-main {
+  left: 7%;
+  top: 7%;
+  width: 57%;
+  min-height: 235px;
+  padding: 1.2rem;
+}
+
+.board-main h3 {
+  font-size: clamp(2rem, 4vw, 3.6rem);
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+}
+
+.board-main p {
+  margin-top: 1rem;
+  color: var(--ink-2);
+}
+
+.board-stat {
+  right: 6%;
+  top: 19%;
+  width: 31%;
+  min-height: 155px;
+  padding: 1rem;
+  background: var(--gold);
+}
+
+.board-stat strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.board-stat span {
+  display: block;
+  margin-top: 0.55rem;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.board-visual {
+  left: 10%;
+  bottom: 7%;
+  width: 80%;
+  min-height: 310px;
+  padding: 1.2rem;
+  background: rgba(255, 253, 247, 0.92);
+}
+
+.visual-mode {
+  display: none;
+}
+
+.visual-mode.active {
+  display: block;
+  animation: pop 0.32s ease both;
+}
+
+@keyframes pop {
+  from { opacity: 0; transform: translateY(10px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.chart-row {
+  display: grid;
+  grid-template-columns: 90px 1fr 42px;
+  gap: 0.7rem;
+  align-items: center;
+  margin: 0.72rem 0;
+  color: var(--ink-2);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+}
+
+.chart-bar {
+  height: 14px;
+  border-radius: 999px;
+  background: var(--paper-2);
+}
+
+.chart-bar span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--blue);
+}
+
+.broadcast-screen {
+  min-height: 220px;
+  padding: 1rem;
+  overflow: hidden;
+  border-radius: 20px;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px),
+    linear-gradient(var(--blue), #0d304d);
+  background-size: 22px 22px, auto;
+  color: var(--cream);
+}
+
+.broadcast-screen h4 {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.broadcast-screen p {
+  max-width: 350px;
+  margin-top: 4.4rem;
+  font-family: var(--serif);
+  font-size: 2.1rem;
+  line-height: 1;
+}
+
+.search-card {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.search-line {
+  display: grid;
+  grid-template-columns: 1fr 56px;
+  gap: 0.7rem;
+  align-items: center;
+  padding: 0.75rem;
+  border-radius: 18px;
+  background: var(--paper);
+}
+
+.search-line span {
+  color: var(--sage);
+  font-family: var(--mono);
+  font-size: 0.74rem;
+}
+
+.workflow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.7rem;
+}
+
+.workflow div {
+  min-height: 150px;
+  padding: 0.8rem;
+  border-radius: 18px;
+  background: var(--paper);
+}
+
+.workflow b {
+  display: block;
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.workflow span {
+  display: block;
+  margin-top: 0.8rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.video-section {
+  background: var(--ink);
+  color: var(--cream);
+}
+
+.video-section .section-kicker,
+.video-section .section-copy {
+  color: rgba(255, 253, 247, 0.66);
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 0.8fr;
+  gap: 1rem;
+}
+
+.video-card {
+  display: flex;
+  min-height: 430px;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgba(255, 253, 247, 0.16);
+  border-radius: 28px;
+  background: rgba(255, 253, 247, 0.06);
+}
+
+.video-card.featured {
+  min-height: 500px;
+}
+
+.video-thumb {
+  position: relative;
+  min-height: 250px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 28% 36%, rgba(255,255,255,.28), transparent 11rem),
+    radial-gradient(circle at 78% 68%, rgba(215,167,63,.45), transparent 12rem),
+    linear-gradient(135deg, var(--blue), var(--clay));
+}
+
+.video-card:nth-child(2) .video-thumb {
+  background:
+    radial-gradient(circle at 72% 24%, rgba(255,255,255,.22), transparent 8rem),
+    linear-gradient(135deg, #31586a, #6c8b7a);
+}
+
+.video-card:nth-child(3) .video-thumb {
+  background:
+    radial-gradient(circle at 30% 72%, rgba(255,255,255,.22), transparent 8rem),
+    linear-gradient(135deg, #533f6d, #b85c45);
+}
+
+.video-thumb::before {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 1px solid rgba(255, 253, 247, 0.34);
+  border-radius: 22px;
+}
+
+.video-thumb::after {
+  content: "PLAY";
+  position: absolute;
+  left: 1.2rem;
+  bottom: 1.2rem;
+  padding: 0.4rem 0.58rem;
+  border-radius: 999px;
+  background: rgba(255, 253, 247, 0.9);
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+}
+
+.video-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1.2rem;
+}
+
+.video-body h3 {
+  margin-bottom: 0.8rem;
+  font-size: 1.7rem;
+  line-height: 1;
+}
+
+.video-body p {
+  flex: 1;
+  color: rgba(255, 253, 247, 0.7);
+}
+
+.video-body a {
+  width: fit-content;
+  margin-top: 1.2rem;
+  color: var(--cream);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  text-decoration-color: var(--gold);
+  text-decoration-thickness: 2px;
+}
+
+.about {
+  background:
+    linear-gradient(135deg, rgba(108, 139, 122, 0.18), transparent 38%),
+    var(--cream);
+  border-top: 1px solid rgba(16, 32, 42, 0.12);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.78fr) minmax(0, 1.1fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: start;
+}
+
+.about-copy {
+  display: grid;
+  gap: 1rem;
+  color: var(--ink-2);
+  line-height: 1.82;
+}
+
+.resume {
+  margin-top: 1.4rem;
+  overflow: hidden;
+  border: 1px solid rgba(16, 32, 42, 0.14);
+  border-radius: 24px;
+  background: rgba(251, 246, 234, 0.72);
+}
+
+.resume-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  padding: 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.resume-row:last-child {
+  border-bottom: 0;
+}
+
+.resume-row b {
+  display: block;
+  font-size: 0.95rem;
+}
+
+.resume-row span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.resume-row time {
+  color: var(--blue);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  white-space: nowrap;
+}
+
+.toolkit {
+  background: var(--paper);
+}
+
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.tool-card {
+  min-height: 250px;
+  padding: 1.2rem;
+  border: 1px solid rgba(16, 32, 42, 0.14);
+  border-radius: 26px;
+  background: rgba(255, 253, 247, 0.78);
+  box-shadow: var(--soft-shadow);
+}
+
+.tool-card h3 {
+  margin-bottom: 1rem;
+  font-size: 1.55rem;
+  line-height: 1;
+}
+
+.tool-card ul {
+  display: grid;
+  gap: 0.7rem;
+  color: var(--ink-2);
+  font-size: 0.92rem;
+  list-style: none;
+}
+
+.contact {
+  background: var(--gold);
+}
+
+.contact-card {
+  display: grid;
+  grid-template-columns: 1fr 0.86fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+  padding: clamp(1.2rem, 3vw, 2rem);
+  border: 1px solid rgba(16, 32, 42, 0.2);
+  border-radius: 30px;
+  background: var(--cream);
+  box-shadow: 10px 10px 0 var(--ink);
+}
+
+.contact-links {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.contact-link {
+  padding: 0.9rem 0;
+  border-bottom: 1px solid rgba(16, 32, 42, 0.2);
+  text-decoration: none;
+}
+
+.contact-link small {
+  display: block;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.2rem clamp(1rem, 3vw, 2rem);
+  background: var(--ink);
+  color: rgba(255, 253, 247, 0.65);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 980px) {
+  .hero,
+  .section-head,
+  .scrolly-grid,
+  .about-grid,
+  .contact-card {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .media-wall {
+    min-height: 690px;
+  }
+
+  .stats-strip,
+  .work-grid,
+  .video-grid,
+  .tool-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .evidence-board {
+    position: relative;
+    top: auto;
+  }
+
+  .steps {
+    gap: 1rem;
+    padding: 1rem 0 0;
+  }
+
+  .step {
+    opacity: 1;
+    transform: none;
+  }
+
+  .video-card.featured {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .topbar {
+    min-height: 64px;
+    height: auto;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero {
+    padding-top: 100px;
+  }
+
+  .media-wall {
+    min-height: 760px;
+  }
+
+  .portrait-frame,
+  .field-frame,
+  .producer-card {
+    width: 88%;
+  }
+
+  .field-frame {
+    top: 300px;
+  }
+
+  .producer-card {
+    left: 5%;
+    bottom: 0;
+  }
+
+  .stats-strip,
+  .work-grid,
+  .video-grid,
+  .tool-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .evidence-board {
+    min-height: 760px;
+  }
+
+  .board-main,
+  .board-stat,
+  .board-visual {
+    left: 1rem;
+    right: 1rem;
+    width: auto;
+  }
+
+  .board-main {
+    top: 1rem;
+  }
+
+  .board-stat {
+    top: 258px;
+  }
+
+  .board-visual {
+    bottom: 1rem;
+  }
+
+  .workflow {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer {
+    flex-direction: column;
+  }
+}
+</style>
+</head>
+
+<body>
+<nav class="topbar">
+  <a class="brand" href="#">
+    <span class="brand-mark">RSC</span>
+    <span>Raginee Sudhir Chaurey</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#work">Best work</a></li>
+    <li><a href="#story">Scrolly</a></li>
+    <li><a href="#video">Video</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow">Data journalist / video producer / enterprise reporter</div>
+    <h1>Stories built from <em>evidence, people and pictures.</em></h1>
+    <p class="hero-dek">
+      I report across public records, policy, communities and video. My work moves from Oakland budget data to Indore public-service failures, from enterprise reporting to broadcast production.
+    </p>
+    <div class="hero-actions">
+      <a class="btn primary" href="#work">Best of my work</a>
+      <a class="btn" href="#video">Watch producer work</a>
+    </div>
+  </div>
+
+  <div class="media-wall" aria-label="Editorial portrait and video collage">
+    <figure class="portrait-frame">
+      <!-- Replace this file with your portrait: assets/raginee-portrait.jpg -->
+      <img class="portrait-photo" src="assets/raginee-portrait.jpg" alt="Raginee Sudhir Chaurey portrait" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+      <div class="portrait-fallback" style="display:none;">
+        <img src="assets/editorial-portrait.svg" alt="Editorial portrait illustration placeholder">
+      </div>
+      <figcaption class="caption"><span>Berkeley MJ '27</span><span>SAJA Scholar</span></figcaption>
+    </figure>
+
+    <figure class="field-frame">
+      <!-- Replace this file with a field/newsroom image: assets/field-reporting.jpg -->
+      <img class="field-photo" src="assets/field-reporting.jpg" alt="Raginee reporting in the field" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+      <div class="field-fallback" style="display:none;">
+        <svg viewBox="0 0 620 360" role="img" aria-label="Notebook and city reporting illustration">
+          <rect width="620" height="360" rx="28" fill="#e5eee8"/>
+          <path d="M70 86h250v210H70z" fill="#fffdf7" stroke="#10202a" stroke-width="8"/>
+          <path d="M110 132h164M110 166h136M110 200h184M110 234h112" stroke="#1e5d83" stroke-width="10" stroke-linecap="round"/>
+          <path d="M370 88h62v208h-62zM454 144h62v152h-62zM538 54h62v242h-62z" fill="#b85c45" stroke="#10202a" stroke-width="8"/>
+          <circle cx="466" cy="86" r="38" fill="#d7a73f" stroke="#10202a" stroke-width="8"/>
+        </svg>
+      </div>
+      <figcaption class="caption"><span>Field notes</span><span>Public-interest reporting</span></figcaption>
+    </figure>
+
+    <aside class="producer-card">
+      <div class="mini-video"><span class="play-triangle"></span></div>
+      <p>Video producer and broadcast journalist: show production, scripting, segment packaging and audience-first storytelling.</p>
+    </aside>
+  </div>
+</header>
+
+<div class="stats-strip">
+  <div class="stat"><strong>100+</strong><span>Published stories</span></div>
+  <div class="stat"><strong>4</strong><span>Newsrooms</span></div>
+  <div class="stat"><strong>Data</strong><span>Reporting focus</span></div>
+  <div class="stat"><strong>Video</strong><span>Production experience</span></div>
+</div>
+
+<section class="work" id="work">
+  <div class="inner">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">Best of my work</div>
+        <h2>Selected clips that show range and reporting depth.</h2>
+      </div>
+      <p class="section-copy">
+        These are arranged by what they prove: data journalism, enterprise reporting, civic accountability, audience strategy and multimedia range.
+      </p>
+    </div>
+
+    <div class="filters" aria-label="Filter portfolio clips">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="data">Data</button>
+      <button class="filter-btn" data-filter="enterprise">Enterprise</button>
+      <button class="filter-btn" data-filter="civic">Civic</button>
+      <button class="filter-btn" data-filter="health">Health</button>
+      <button class="filter-btn" data-filter="audience">Audience</button>
+    </div>
+
+    <div class="work-grid">
+      <article class="work-card reveal" data-tags="data enterprise civic">
+        <div class="card-top"><span class="pill">Oakland North</span><span class="date">2025</span></div>
+        <h3>Looming in 2026: Federal cuts hit Oakland's deficit-laden budget</h3>
+        <p>First in a three-part series on how federal funding cuts threaten Oakland services, housing, youth programs and public health.</p>
+        <div class="why">Best for: data-backed enterprise reporting, budget accountability and public-service impact.</div>
+        <a href="https://oaklandnorth.net/2025/12/22/looming-in-2026-cuts-in-federal-funds-deal-blow-to-oaklands-deficit-laden-budget/" target="_blank" rel="noopener">Read story</a>
+      </article>
+
+      <article class="work-card reveal" data-tags="data civic">
+        <div class="card-top"><span class="pill">Oakland North</span><span class="date">2025</span></div>
+        <h3>Oakland eyes another parcel tax increase to close budget gap</h3>
+        <p>A clear civic-finance story explaining Oakland's projected shortfall, proposed parcel tax changes and political tradeoffs.</p>
+        <div class="why">Best for: translating municipal finance into readable public-interest journalism.</div>
+        <a href="https://oaklandnorth.net/2025/10/01/oakland-eyes-another-parcel-tax-increase-to-close-budget-gap/" target="_blank" rel="noopener">Read story</a>
+      </article>
+
+      <article class="work-card reveal" data-tags="enterprise civic">
+        <div class="card-top"><span class="pill enterprise">Oakland North</span><span class="date">2025</span></div>
+        <h3>Oakland may clear encampments without offering shelter</h3>
+        <p>A policy accountability story on homelessness enforcement, state grant risk and the people most affected by a proposed shift.</p>
+        <div class="why">Best for: enterprise reporting, policy stakes and human-centered sourcing.</div>
+        <a href="https://oaklandnorth.net/2025/12/01/oakland-council-considers-policy-shift-to-clear-encampments-without-offering-residents-shelter/" target="_blank" rel="noopener">Read story</a>
+      </article>
+
+      <article class="work-card reveal" data-tags="civic audience">
+        <div class="card-top"><span class="pill">Oakland North</span><span class="date">2025</span></div>
+        <h3>City Council creates entertainment zones to spur night life</h3>
+        <p>Coverage of Oakland's economic activation zones, AI hub plans and how public space can be used for community revival.</p>
+        <div class="why">Best for: local business, culture, policy and future-facing city coverage.</div>
+        <a href="https://oaklandnorth.net/2025/12/08/city-council-creates-new-entertainment-zones-to-spur-night-life/" target="_blank" rel="noopener">Read story</a>
+      </article>
+
+      <article class="work-card reveal" data-tags="data health enterprise">
+        <div class="card-top"><span class="pill">Free Press Journal</span><span class="date">2023</span></div>
+        <h3>Only 35% anganwadi kids get hot meals, Poshan Tracker shows</h3>
+        <p>A data-led public welfare story using Poshan Tracker numbers to show gaps in nutrition-service delivery for children.</p>
+        <div class="why">Best for: data journalism, welfare accountability and public records.</div>
+        <a href="https://www.freepressjournal.in/indore/indore-only-35-anganwadi-kids-get-hot-meals-reveals-poshan-tracker" target="_blank" rel="noopener">Read story</a>
+      </article>
+
+      <article class="work-card reveal" data-tags="data health enterprise">
+        <div class="card-top"><span class="pill">Free Press Journal</span><span class="date">2023</span></div>
+        <h3>Zero child malnourishment data called impractical</h3>
+        <p>A follow-up accountability story showing how official nutrition data failed to reflect ground realities.</p>
+        <div class="why">Best for: challenging flawed data and making administrative gaps visible.</div>
+        <a href="https://www.freepressjournal.in/indore/indore-data-shows-zero-case-of-child-malnourishment-directorate-calls-it-impractical-and-orders-to-use-poshan-tracker-app" target="_blank" rel="noopener">Read story</a>
+      </article>
+
+      <article class="work-card reveal" data-tags="enterprise civic health">
+        <div class="card-top"><span class="pill enterprise">Free Press Journal</span><span class="date">2024</span></div>
+        <h3>Cleanest City's curse: contaminated water supply</h3>
+        <p>An enterprise story on residents forced to consume contaminated tap water because sewage was mixing with supply lines.</p>
+        <div class="why">Best for: ground reporting, public health and service-delivery accountability.</div>
+        <a href="https://www.freepressjournal.in/indore/contaminated-water-supply-cleanest-citys-curse-ganda-ganda-paani" target="_blank" rel="noopener">Read story</a>
+      </article>
+
+      <article class="work-card reveal" data-tags="enterprise civic">
+        <div class="card-top"><span class="pill enterprise">Free Press Journal</span><span class="date">2022</span></div>
+        <h3>CCTV cameras and panic buttons not working in city buses</h3>
+        <p>An accountability story on public transport safety gaps, broken infrastructure and official claims of maintenance.</p>
+        <div class="why">Best for: watchdog reporting and public safety accountability.</div>
+        <a href="https://www.freepressjournal.in/indore/indore-cctv-cameras-panic-buttons-not-working-in-many-aictsl-buses" target="_blank" rel="noopener">Read story</a>
+      </article>
+
+      <article class="work-card reveal" data-tags="enterprise civic">
+        <div class="card-top"><span class="pill enterprise">Free Press Journal</span><span class="date">2023</span></div>
+        <h3>Disguised begging: the 'Wiper Gang' at Indore crossings</h3>
+        <p>A street-level enterprise feature on organized begging tactics, civic response and everyday public-space friction.</p>
+        <div class="why">Best for: observational reporting, city life and enterprise feature writing.</div>
+        <a href="https://www.freepressjournal.in/indore/indore-disguised-begging-wiper-gang-cleaning-cars-at-crossings-demand-money" target="_blank" rel="noopener">Read story</a>
+      </article>
+
+      <article class="work-card reveal" data-tags="enterprise civic health">
+        <div class="card-top"><span class="pill">Outlook India</span><span class="date">2024</span></div>
+        <h3>MP orders closure of 66 nursing colleges after scam probe</h3>
+        <p>A policy-accountability piece on the Madhya Pradesh nursing college scam and a High Court-directed closure order.</p>
+        <div class="why">Best for: state policy, education accountability and fast national-news judgment.</div>
+        <a href="https://www.outlookindia.com/national/scam-probe-mp-govt-orders-closure-of-66-nursing-colleges" target="_blank" rel="noopener">Read story</a>
+      </article>
+
+      <article class="work-card reveal" data-tags="data health audience">
+        <div class="card-top"><span class="pill">Outlook India</span><span class="date">2024</span></div>
+        <h3>Menstrual hygiene survey finds gaps in male participation</h3>
+        <p>A survey-based story translating findings on menstrual-health stigma into accessible public-interest reporting.</p>
+        <div class="why">Best for: survey data, health communication and audience-friendly framing.</div>
+        <a href="https://www.outlookindia.com/national/survey-says-over-50-pc-of-educated-urban-men-never-bought-menstrual-hygiene-product-for-partners" target="_blank" rel="noopener">Read story</a>
+      </article>
+
+      <article class="work-card reveal" data-tags="audience civic">
+        <div class="card-top"><span class="pill">Oakland North</span><span class="date">All clips</span></div>
+        <h3>Oakland North author archive</h3>
+        <p>A living archive of recent Oakland clips across budget, housing, child care, business, culture and civic policy.</p>
+        <div class="why">Best for: showing ongoing beat range and Berkeley reporting momentum.</div>
+        <a href="https://oaklandnorth.net/author/rsudhirchaurey/" target="_blank" rel="noopener">View archive</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="scrolly" id="story">
+  <div class="inner">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">Interactive scrolly</div>
+        <h2>How I move from data to story.</h2>
+      </div>
+      <p class="section-copy">
+        This section works like a visual reporting memo: as readers scroll, the evidence board changes from data to field reporting to video production to audience strategy.
+      </p>
+    </div>
+
+    <div class="scrolly-grid">
+      <div class="steps">
+        <article class="step active" data-index="0">
+          <div class="step-label"><span>01</span><span>Data</span></div>
+          <h3>Start with the record.</h3>
+          <p>Budgets, trackers, survey findings, court orders and public memos give the story a spine.</p>
+        </article>
+
+        <article class="step" data-index="1">
+          <div class="step-label"><span>02</span><span>Enterprise</span></div>
+          <h3>Then test it outside the spreadsheet.</h3>
+          <p>Enterprise reporting means finding the people, places and consequences that make the data matter.</p>
+        </article>
+
+        <article class="step" data-index="2">
+          <div class="step-label"><span>03</span><span>Video</span></div>
+          <h3>Build for screen and sound.</h3>
+          <p>As a video producer, I think in scenes, scripts, pacing, interviews and audience retention.</p>
+        </article>
+
+        <article class="step" data-index="3">
+          <div class="step-label"><span>04</span><span>Audience</span></div>
+          <h3>Make the story findable.</h3>
+          <p>SEO, metadata, headlines and structure are editorial tools when they help public-interest reporting reach readers.</p>
+        </article>
+      </div>
+
+      <aside class="evidence-board" aria-live="polite">
+        <div class="board-note board-main">
+          <h3 id="board-title">Interrogate the dataset.</h3>
+          <p id="board-copy">Numbers are not the story. They are the first set of questions.</p>
+        </div>
+
+        <div class="board-note board-stat">
+          <strong id="board-stat">35%</strong>
+          <span id="board-stat-label">Hot meals finding</span>
+        </div>
+
+        <div class="board-note board-visual">
+          <div class="visual-mode active" data-mode="0">
+            <div class="chart-row"><span>Records</span><div class="chart-bar"><span style="width:88%"></span></div><b>88</b></div>
+            <div class="chart-row"><span>Budgets</span><div class="chart-bar"><span style="width:74%"></span></div><b>74</b></div>
+            <div class="chart-row"><span>Policy</span><div class="chart-bar"><span style="width:82%"></span></div><b>82</b></div>
+            <div class="chart-row"><span>People</span><div class="chart-bar"><span style="width:94%"></span></div><b>94</b></div>
+          </div>
+
+          <div class="visual-mode" data-mode="1">
+            <div class="chart-row"><span>Observe</span><div class="chart-bar"><span style="width:91%"></span></div><b>91</b></div>
+            <div class="chart-row"><span>Verify</span><div class="chart-bar"><span style="width:86%"></span></div><b>86</b></div>
+            <div class="chart-row"><span>Source</span><div class="chart-bar"><span style="width:79%"></span></div><b>79</b></div>
+            <div class="chart-row"><span>Context</span><div class="chart-bar"><span style="width:90%"></span></div><b>90</b></div>
+          </div>
+
+          <div class="visual-mode" data-mode="2">
+            <div class="broadcast-screen">
+              <h4>Producer frame</h4>
+              <p>Script. Segment. Shot list. Show flow.</p>
+            </div>
+          </div>
+
+          <div class="visual-mode" data-mode="3">
+            <div class="search-card">
+              <div class="search-line"><b>Headline clarity</b><span>+42%</span></div>
+              <div class="search-line"><b>Search intent</b><span>+31%</span></div>
+              <div class="search-line"><b>Metadata</b><span>+27%</span></div>
+              <div class="search-line"><b>Reader path</b><span>+36%</span></div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="video-section" id="video">
+  <div class="inner">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">Video producer work</div>
+        <h2>For broadcast, explainers and visual storytelling.</h2>
+      </div>
+      <p class="section-copy">
+        I could not find public DD India video URLs that clearly tie to your byline online. These cards are ready for your show links, YouTube embeds, Vimeo links or Google Drive reels.
+      </p>
+    </div>
+
+    <div class="video-grid">
+      <article class="video-card featured reveal">
+        <div class="video-thumb"></div>
+        <div class="video-body">
+          <h3>Produced show / broadcast package</h3>
+          <p>Feature your strongest show production credit here: the topic, your role, the editorial challenge and the audience it served.</p>
+          <a href="mailto:ragineesmchaurey@gmail.com?subject=Video%20portfolio%20link">Add video link</a>
+        </div>
+      </article>
+
+      <article class="video-card reveal">
+        <div class="video-thumb"></div>
+        <div class="video-body">
+          <h3>Field video or short documentary</h3>
+          <p>A slot for a field-produced piece, interview-led video, short doc or reporter package.</p>
+          <a href="mailto:ragineesmchaurey@gmail.com?subject=Field%20video%20link">Add link</a>
+        </div>
+      </article>
+
+      <article class="video-card reveal">
+        <div class="video-thumb"></div>
+        <div class="video-body">
+          <h3>Explainer / audience video</h3>
+          <p>A slot for a social video, digital explainer or audience-first piece that shows production instincts.</p>
+          <a href="mailto:ragineesmchaurey@gmail.com?subject=Explainer%20video%20link">Add link</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="inner about-grid">
+    <div>
+      <div class="section-kicker">About</div>
+      <h2>A reporter with data habits, enterprise instincts and production range.</h2>
+    </div>
+
+    <div>
+      <div class="about-copy">
+        <p>I started by covering city halls, election nights, neighborhoods and public systems in Indore. That work taught me that the most important stories often live between what officials say and what records reveal.</p>
+        <p>At Doordarshan and DD India, I learned how to produce for scale: scripting, segment thinking and clear public-facing storytelling. At Outlook India, I worked with digital publishing and audience analytics. At UC Berkeley, I am deepening my practice in data reporting, visualization, scraping and public records work.</p>
+      </div>
+
+      <div class="resume">
+        <div class="resume-row"><div><b>Reporter, Oakland North</b><span>UC Berkeley Graduate School of Journalism</span></div><time>2025 to now</time></div>
+        <div class="resume-row"><div><b>Journalist / Video Producer</b><span>Doordarshan / DD India</span></div><time>2024 to 2025</time></div>
+        <div class="resume-row"><div><b>Reporter</b><span>Free Press Journal</span></div><time>2022 to 2024</time></div>
+        <div class="resume-row"><div><b>Trainee Sub-Editor</b><span>Outlook Publishing India</span></div><time>2024</time></div>
+        <div class="resume-row"><div><b>Master of Journalism</b><span>University of California, Berkeley</span></div><time>2027</time></div>
+        <div class="resume-row"><div><b>PG Diploma, English Journalism</b><span>Indian Institute of Mass Communication, Delhi / Gold Medal</span></div><time>2024</time></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="toolkit">
+  <div class="inner">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">Toolkit</div>
+        <h2>What I bring to a newsroom.</h2>
+      </div>
+      <p class="section-copy">Reporting range plus technical and production fluency: enough to find the story, test the evidence and package it for readers and viewers.</p>
+    </div>
+
+    <div class="tool-grid">
+      <div class="tool-card reveal">
+        <h3>Data journalism</h3>
+        <ul>
+          <li>Python for analysis and scraping</li>
+          <li>R for statistical analysis</li>
+          <li>Data cleaning and visualization</li>
+          <li>Public records and FOIA</li>
+        </ul>
+      </div>
+      <div class="tool-card reveal">
+        <h3>Enterprise reporting</h3>
+        <ul>
+          <li>Civic and municipal accountability</li>
+          <li>Source development and interviews</li>
+          <li>Policy and public-service beats</li>
+          <li>Health, education and welfare reporting</li>
+        </ul>
+      </div>
+      <div class="tool-card reveal">
+        <h3>Video and audience</h3>
+        <ul>
+          <li>Broadcast show production</li>
+          <li>Scriptwriting and segment packaging</li>
+          <li>SEO, metadata and CMS publishing</li>
+          <li>English and Hindi fluency</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="inner contact-card">
+    <div>
+      <div class="section-kicker">Contact</div>
+      <h2>Let's build stories with evidence, scenes and consequence.</h2>
+      <p class="section-copy">I am seeking full-time roles in data journalism, enterprise reporting, video production and audience development from May 2027. I am also open to fellowships, freelance data projects and editorial collaborations now.</p>
+    </div>
+
+    <div class="contact-links">
+      <a class="contact-link" href="mailto:ragineesmchaurey@gmail.com"><small>Email</small>ragineesmchaurey@gmail.com</a>
+      <a class="contact-link" href="https://www.linkedin.com/in/raginee-sudhir-chaurey" target="_blank" rel="noopener"><small>LinkedIn</small>raginee-sudhir-chaurey</a>
+      <a class="contact-link" href="https://journalism.berkeley.edu/person/raginee_chaurey/" target="_blank" rel="noopener"><small>Berkeley profile</small>UC Berkeley Graduate School of Journalism</a>
+      <a class="contact-link" href="https://saja.org/SAJA-2025-Scholarship-Winners" target="_blank" rel="noopener"><small>Recognition</small>2025 SAJA Scholarship Recipient</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <span>Raginee Sudhir Chaurey</span>
+  <span>Data journalist / video producer / UC Berkeley MJ '27</span>
+</footer>
+
+<script>
+const steps = [...document.querySelectorAll(".step")];
+const modes = [...document.querySelectorAll(".visual-mode")];
+const boardTitle = document.getElementById("board-title");
+const boardCopy = document.getElementById("board-copy");
+const boardStat = document.getElementById("board-stat");
+const boardStatLabel = document.getElementById("board-stat-label");
+
+const chapters = [
+  {
+    title: "Interrogate the dataset.",
+    copy: "Numbers are not the story. They are the first set of questions.",
+    stat: "35%",
+    label: "Hot meals finding"
+  },
+  {
+    title: "Report beyond the memo.",
+    copy: "Enterprise work means putting official claims next to lived reality.",
+    stat: "Field",
+    label: "Enterprise reporting"
+  },
+  {
+    title: "Produce for the screen.",
+    copy: "Broadcast work asks for structure, pacing, script discipline and visual clarity.",
+    stat: "Video",
+    label: "Producer experience"
+  },
+  {
+    title: "Package for readers.",
+    copy: "Audience strategy is editorial craft when it helps public-interest work travel.",
+    stat: "SEO",
+    label: "Audience strategy"
+  }
+];
+
+function setChapter(index) {
+  steps.forEach((step, stepIndex) => step.classList.toggle("active", stepIndex === index));
+  modes.forEach((mode, modeIndex) => mode.classList.toggle("active", modeIndex === index));
+  boardTitle.textContent = chapters[index].title;
+  boardCopy.textContent = chapters[index].copy;
+  boardStat.textContent = chapters[index].stat;
+  boardStatLabel.textContent = chapters[index].label;
+}
+
+const stepObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) setChapter(Number(entry.target.dataset.index));
+  });
+}, { threshold: 0.55 });
+
+steps.forEach(step => stepObserver.observe(step));
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add("visible");
+  });
+}, { threshold: 0.18 });
+
+document.querySelectorAll(".reveal").forEach(element => revealObserver.observe(element));
+
+const filterBtns = document.querySelectorAll(".filter-btn");
+const cards = document.querySelectorAll(".work-card");
+
+filterBtns.forEach(button => {
+  button.addEventListener("click", () => {
+    filterBtns.forEach(btn => btn.classList.remove("active"));
+    button.classList.add("active");
+    const filter = button.dataset.filter;
+    cards.forEach(card => {
+      const tags = card.dataset.tags || "";
+      card.classList.toggle("hidden", filter !== "all" && !tags.includes(filter));
+    });
+  });
+});
+</script>
+</body>
+</html>
