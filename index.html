@@ -18,22 +18,24 @@
 }
 
 :root {
-  --ink: #10202a;
-  --ink-2: #243947;
-  --muted: #66757c;
-  --paper: #fbf6ea;
-  --paper-2: #f0eadb;
+  --ink: #071827;
+  --ink-2: #18324a;
+  --muted: #607286;
+  --paper: #f8fbff;
+  --paper-2: #edf4ff;
   --cream: #fffdf7;
-  --line: #d7cdbb;
-  --blue: #1e5d83;
-  --blue-soft: #d8e8ee;
-  --sage: #6c8b7a;
-  --sage-soft: #e5eee8;
-  --clay: #b85c45;
-  --clay-soft: #f2d9cf;
-  --gold: #d7a73f;
-  --shadow: 0 24px 70px rgba(16, 32, 42, 0.14);
-  --soft-shadow: 0 16px 40px rgba(16, 32, 42, 0.08);
+  --line: #cfdbef;
+  --blue: #2563eb;
+  --blue-soft: #dceafe;
+  --sage: #7c3aed;
+  --sage-soft: #eee7ff;
+  --clay: #ec4899;
+  --clay-soft: #ffe1ef;
+  --gold: #f59e0b;
+  --mx: 50%;
+  --my: 18%;
+  --shadow: 0 24px 70px rgba(7, 24, 39, 0.14);
+  --soft-shadow: 0 16px 40px rgba(7, 24, 39, 0.08);
   --serif: "Fraunces", Georgia, serif;
   --sans: "DM Sans", system-ui, sans-serif;
   --mono: "DM Mono", monospace;
@@ -47,15 +49,17 @@ html {
 body {
   color: var(--ink);
   background:
-    radial-gradient(circle at 12% 8%, rgba(216, 232, 238, 0.9), transparent 26rem),
-    radial-gradient(circle at 88% 20%, rgba(242, 217, 207, 0.74), transparent 24rem),
-    linear-gradient(rgba(16, 32, 42, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(16, 32, 42, 0.025) 1px, transparent 1px),
+    radial-gradient(circle at var(--mx) var(--my), rgba(236, 72, 153, 0.16), transparent 18rem),
+    radial-gradient(circle at 13% 12%, rgba(37, 99, 235, 0.19), transparent 28rem),
+    radial-gradient(circle at 88% 18%, rgba(236, 72, 153, 0.16), transparent 26rem),
+    linear-gradient(rgba(37, 99, 235, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(236, 72, 153, 0.04) 1px, transparent 1px),
     var(--paper);
-  background-size: auto, auto, 36px 36px, 36px 36px, auto;
+  background-size: auto, auto, auto, 36px 36px, 36px 36px, auto;
   font-family: var(--sans);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 a {
@@ -68,6 +72,87 @@ video {
   max-width: 100%;
 }
 
+.journal-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.journal-bg::before {
+  content: "";
+  position: absolute;
+  inset: -15%;
+  background:
+    radial-gradient(circle at var(--mx) var(--my), rgba(236, 72, 153, 0.22), transparent 18rem),
+    linear-gradient(110deg, transparent 0 44%, rgba(37, 99, 235, 0.08) 45% 47%, transparent 48% 100%);
+  animation: newsroomWash 16s ease-in-out infinite alternate;
+}
+
+.news-chip {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0.46rem 0.7rem;
+  border: 1px solid rgba(7, 24, 39, 0.1);
+  border-radius: 999px;
+  background: rgba(255, 253, 247, 0.58);
+  color: rgba(7, 24, 39, 0.38);
+  box-shadow: 0 18px 55px rgba(7, 24, 39, 0.08);
+  backdrop-filter: blur(10px);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  animation: floatNews 18s ease-in-out infinite;
+}
+
+.news-chip:nth-child(1) { left: 6%; top: 18%; animation-delay: -3s; }
+.news-chip:nth-child(2) { right: 7%; top: 25%; animation-delay: -8s; }
+.news-chip:nth-child(3) { left: 14%; bottom: 20%; animation-delay: -12s; }
+.news-chip:nth-child(4) { right: 16%; bottom: 14%; animation-delay: -5s; }
+.news-chip:nth-child(5) { left: 46%; top: 9%; animation-delay: -15s; }
+
+.news-line {
+  position: absolute;
+  width: 260px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, rgba(236, 72, 153, 0.28), rgba(37, 99, 235, 0.24), transparent);
+  animation: slideLine 12s linear infinite;
+}
+
+.news-line.one { left: 5%; top: 38%; }
+.news-line.two { right: -4%; top: 58%; animation-delay: -4s; }
+.news-line.three { left: 36%; bottom: 11%; animation-delay: -8s; }
+
+.topbar,
+.hero,
+.stats-strip,
+section,
+.footer {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes newsroomWash {
+  from { transform: translate3d(-2%, -1%, 0) rotate(-1deg) scale(1); }
+  to { transform: translate3d(2%, 1.5%, 0) rotate(1deg) scale(1.04); }
+}
+
+@keyframes floatNews {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(-2deg); }
+  50% { transform: translate3d(18px, -28px, 0) rotate(2deg); }
+}
+
+@keyframes slideLine {
+  from { transform: translateX(-18vw) rotate(-8deg); opacity: 0.15; }
+  50% { opacity: 0.65; }
+  to { transform: translateX(24vw) rotate(-8deg); opacity: 0.15; }
+}
+
 .topbar {
   position: fixed;
   inset: 0 0 auto 0;
@@ -78,7 +163,7 @@ video {
   justify-content: space-between;
   padding: 0 clamp(1rem, 3vw, 2.25rem);
   border-bottom: 1px solid rgba(16, 32, 42, 0.12);
-  background: rgba(251, 246, 234, 0.88);
+  background: rgba(248, 251, 255, 0.88);
   backdrop-filter: blur(18px);
 }
 
@@ -252,25 +337,76 @@ h1 em {
   transform: translateX(-50%) rotate(-2deg);
 }
 
+.portrait-media,
+.field-media {
+  position: relative;
+  overflow: hidden;
+}
+
+.portrait-media,
 .portrait-photo,
 .portrait-fallback {
   width: 100%;
   aspect-ratio: 4 / 5;
   border-radius: 18px;
-  object-fit: cover;
   background: var(--blue-soft);
 }
 
 .portrait-fallback {
+  position: absolute;
+  inset: 0;
   display: grid;
   place-items: center;
   overflow: hidden;
+  padding: 1rem;
 }
 
-.portrait-fallback img {
+.portrait-photo {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.portrait-photo.loaded {
+  opacity: 1;
+}
+
+.portrait-placeholder {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-content: end;
+  padding: 1.15rem;
+  border-radius: 14px;
+  background:
+    radial-gradient(circle at 72% 18%, rgba(215, 167, 63, 0.72), transparent 7rem),
+    radial-gradient(circle at 20% 35%, rgba(184, 92, 69, 0.34), transparent 8rem),
+    linear-gradient(145deg, var(--blue-soft), var(--sage-soft));
+  color: var(--ink);
+}
+
+.portrait-placeholder strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 4vw, 4.4rem);
+  line-height: 0.86;
+  letter-spacing: -0.04em;
+}
+
+.portrait-placeholder span {
+  display: block;
+  max-width: 16rem;
+  margin-top: 0.85rem;
+  color: var(--ink-2);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
 }
 
 .caption {
@@ -298,22 +434,38 @@ h1 em {
   transform: rotate(2deg);
 }
 
+.field-media,
 .field-photo,
 .field-fallback {
   width: 100%;
   aspect-ratio: 16 / 10;
   border-radius: 16px;
-  object-fit: cover;
   background:
     linear-gradient(135deg, rgba(30, 93, 131, 0.18), rgba(108, 139, 122, 0.2)),
     var(--sage-soft);
 }
 
 .field-fallback {
-  position: relative;
+  position: absolute;
+  inset: 0;
   display: grid;
   place-items: center;
   overflow: hidden;
+}
+
+.field-photo {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.field-photo.loaded {
+  opacity: 1;
 }
 
 .field-fallback svg {
@@ -391,6 +543,19 @@ h1 em {
   margin-top: 0.8rem;
   color: rgba(255, 253, 247, 0.72);
   font-size: 0.92rem;
+}
+
+.producer-card a {
+  display: inline-flex;
+  width: fit-content;
+  margin-top: 0.9rem;
+  color: var(--cream);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-decoration-color: var(--gold);
+  text-decoration-thickness: 2px;
+  text-transform: uppercase;
 }
 
 .stats-strip {
@@ -845,13 +1010,16 @@ h2 {
 }
 
 .video-section {
-  background: var(--ink);
-  color: var(--cream);
+  background:
+    radial-gradient(circle at 14% 10%, rgba(37, 99, 235, 0.28), transparent 24rem),
+    radial-gradient(circle at 88% 8%, rgba(236, 72, 153, 0.23), transparent 24rem),
+    linear-gradient(135deg, #f7fbff 0%, #eef4ff 48%, #ffe8f3 100%);
+  color: var(--ink);
 }
 
 .video-section .section-kicker,
 .video-section .section-copy {
-  color: rgba(255, 253, 247, 0.66);
+  color: var(--ink-2);
 }
 
 .video-grid {
@@ -865,57 +1033,112 @@ h2 {
   min-height: 430px;
   flex-direction: column;
   overflow: hidden;
-  border: 1px solid rgba(255, 253, 247, 0.16);
-  border-radius: 28px;
-  background: rgba(255, 253, 247, 0.06);
+  border: 1px solid rgba(7, 24, 39, 0.12);
+  border-radius: 32px;
+  background: rgba(255, 253, 247, 0.92);
+  box-shadow: var(--shadow);
 }
 
 .video-card.featured {
   min-height: 500px;
 }
 
-.video-thumb {
+.video-cover {
   position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
   min-height: 250px;
   overflow: hidden;
   background:
     radial-gradient(circle at 28% 36%, rgba(255,255,255,.28), transparent 11rem),
-    radial-gradient(circle at 78% 68%, rgba(215,167,63,.45), transparent 12rem),
+    radial-gradient(circle at 78% 68%, rgba(236,72,153,.42), transparent 12rem),
     linear-gradient(135deg, var(--blue), var(--clay));
+  color: var(--cream);
+  text-decoration: none;
 }
 
-.video-card:nth-child(2) .video-thumb {
-  background:
-    radial-gradient(circle at 72% 24%, rgba(255,255,255,.22), transparent 8rem),
-    linear-gradient(135deg, #31586a, #6c8b7a);
+.video-cover img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.58;
+  filter: saturate(1.12) contrast(1.06);
+  transition: transform 0.35s ease, opacity 0.35s ease;
 }
 
-.video-card:nth-child(3) .video-thumb {
-  background:
-    radial-gradient(circle at 30% 72%, rgba(255,255,255,.22), transparent 8rem),
-    linear-gradient(135deg, #533f6d, #b85c45);
-}
-
-.video-thumb::before {
+.video-cover::before {
   content: "";
   position: absolute;
-  inset: 18px;
-  border: 1px solid rgba(255, 253, 247, 0.34);
-  border-radius: 22px;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(180deg, rgba(7, 24, 39, 0.12), rgba(7, 24, 39, 0.68)),
+    radial-gradient(circle at 20% 20%, rgba(236, 72, 153, 0.38), transparent 13rem);
 }
 
-.video-thumb::after {
-  content: "PLAY";
+.video-cover::after {
+  content: "Watch";
   position: absolute;
-  left: 1.2rem;
-  bottom: 1.2rem;
-  padding: 0.4rem 0.58rem;
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 3;
+  padding: 0.45rem 0.66rem;
   border-radius: 999px;
-  background: rgba(255, 253, 247, 0.9);
+  background: rgba(255, 253, 247, 0.92);
   color: var(--ink);
   font-family: var(--mono);
   font-size: 0.68rem;
   letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.video-cover:hover img {
+  transform: scale(1.05);
+  opacity: 0.72;
+}
+
+.play-button {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 3;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(255, 253, 247, 0.92);
+  box-shadow: 0 0 0 14px rgba(255, 253, 247, 0.18);
+  transform: translate(-50%, -50%);
+}
+
+.play-button::after {
+  content: "";
+  position: absolute;
+  left: 29px;
+  top: 23px;
+  width: 0;
+  height: 0;
+  border-top: 13px solid transparent;
+  border-bottom: 13px solid transparent;
+  border-left: 19px solid var(--clay);
+}
+
+.video-label {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  top: 1rem;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: rgba(255, 253, 247, 0.86);
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 .video-body {
@@ -933,19 +1156,39 @@ h2 {
 
 .video-body p {
   flex: 1;
-  color: rgba(255, 253, 247, 0.7);
+  color: var(--ink-2);
 }
 
-.video-body a {
-  width: fit-content;
+.video-note {
+  margin-top: 0.9rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.video-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
   margin-top: 1.2rem;
-  color: var(--cream);
+}
+
+.video-body a,
+.reel-link {
+  width: fit-content;
+  color: var(--blue);
   font-size: 0.74rem;
   font-weight: 800;
   letter-spacing: 0.09em;
   text-transform: uppercase;
-  text-decoration-color: var(--gold);
+  text-decoration-color: var(--clay);
   text-decoration-thickness: 2px;
+}
+
+.reel-link {
+  display: inline-flex;
+  margin-top: 1rem;
 }
 
 .about {
@@ -1220,6 +1463,17 @@ h2 {
 </head>
 
 <body>
+<div class="journal-bg" aria-hidden="true">
+  <span class="news-chip">Breaking desk</span>
+  <span class="news-chip">Public records</span>
+  <span class="news-chip">Video script</span>
+  <span class="news-chip">Data clean</span>
+  <span class="news-chip">Field notes</span>
+  <span class="news-line one"></span>
+  <span class="news-line two"></span>
+  <span class="news-line three"></span>
+</div>
+
 <nav class="topbar">
   <a class="brand" href="#">
     <span class="brand-mark">RSC</span>
@@ -1250,31 +1504,39 @@ h2 {
   <div class="media-wall" aria-label="Editorial portrait and video collage">
     <figure class="portrait-frame">
       <!-- Replace this file with your portrait: assets/raginee-portrait.jpg -->
-      <img class="portrait-photo" src="assets/raginee-portrait.jpg" alt="Raginee Sudhir Chaurey portrait" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
-      <div class="portrait-fallback" style="display:none;">
-        <img src="assets/editorial-portrait.svg" alt="Editorial portrait illustration placeholder">
+      <div class="portrait-media">
+        <div class="portrait-fallback" aria-hidden="true">
+          <div class="portrait-placeholder">
+            <strong>Raginee<br>Chaurey</strong>
+            <span>Portrait slot. Add assets/raginee-portrait.jpg to show your real photo.</span>
+          </div>
+        </div>
+        <img class="portrait-photo" src="assets/raginee-portrait.jpg" alt="Raginee Sudhir Chaurey portrait" onload="this.classList.add('loaded')" onerror="this.remove()">
       </div>
       <figcaption class="caption"><span>Berkeley MJ '27</span><span>SAJA Scholar</span></figcaption>
     </figure>
 
     <figure class="field-frame">
       <!-- Replace this file with a field/newsroom image: assets/field-reporting.jpg -->
-      <img class="field-photo" src="assets/field-reporting.jpg" alt="Raginee reporting in the field" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
-      <div class="field-fallback" style="display:none;">
-        <svg viewBox="0 0 620 360" role="img" aria-label="Notebook and city reporting illustration">
-          <rect width="620" height="360" rx="28" fill="#e5eee8"/>
-          <path d="M70 86h250v210H70z" fill="#fffdf7" stroke="#10202a" stroke-width="8"/>
-          <path d="M110 132h164M110 166h136M110 200h184M110 234h112" stroke="#1e5d83" stroke-width="10" stroke-linecap="round"/>
-          <path d="M370 88h62v208h-62zM454 144h62v152h-62zM538 54h62v242h-62z" fill="#b85c45" stroke="#10202a" stroke-width="8"/>
-          <circle cx="466" cy="86" r="38" fill="#d7a73f" stroke="#10202a" stroke-width="8"/>
-        </svg>
+      <div class="field-media">
+        <div class="field-fallback" aria-hidden="true">
+          <svg viewBox="0 0 620 360" role="img" aria-label="Notebook and city reporting illustration">
+            <rect width="620" height="360" rx="28" fill="#e5eee8"/>
+            <path d="M70 86h250v210H70z" fill="#fffdf7" stroke="#10202a" stroke-width="8"/>
+            <path d="M110 132h164M110 166h136M110 200h184M110 234h112" stroke="#1e5d83" stroke-width="10" stroke-linecap="round"/>
+            <path d="M370 88h62v208h-62zM454 144h62v152h-62zM538 54h62v242h-62z" fill="#b85c45" stroke="#10202a" stroke-width="8"/>
+            <circle cx="466" cy="86" r="38" fill="#d7a73f" stroke="#10202a" stroke-width="8"/>
+          </svg>
+        </div>
+        <img class="field-photo" src="assets/field-reporting.jpg" alt="Raginee reporting in the field" onload="this.classList.add('loaded')" onerror="this.remove()">
       </div>
       <figcaption class="caption"><span>Field notes</span><span>Public-interest reporting</span></figcaption>
     </figure>
 
     <aside class="producer-card">
       <div class="mini-video"><span class="play-triangle"></span></div>
-      <p>Video producer and broadcast journalist: show production, scripting, segment packaging and audience-first storytelling.</p>
+      <p>Video producer and broadcast journalist: editorial desk work, executive production, scripting, segment packaging and audience-first storytelling.</p>
+      <a href="https://drive.google.com/file/d/1nr2CoECbd8KMAl1qlU046DSo-M2aWyni/view?usp=sharing" target="_blank" rel="noopener">View production reel</a>
     </aside>
   </div>
 </header>
@@ -1497,39 +1759,61 @@ h2 {
   <div class="inner">
     <div class="section-head">
       <div>
-        <div class="section-kicker">Video producer work</div>
+        <div class="section-kicker">Video producer and broadcast journalist</div>
         <h2>For broadcast, explainers and visual storytelling.</h2>
       </div>
       <p class="section-copy">
-        I could not find public DD India video URLs that clearly tie to your byline online. These cards are ready for your show links, YouTube embeds, Vimeo links or Google Drive reels.
+        I worked primarily with Doordarshan's newsroom editorial team and as an executive producer on <em>Voice of the Global South</em>. My video work combines research, scripting, segment packaging and show production, including broadcast stories that became some of Doordarshan's highest-viewed news pieces.
+        <br><a class="reel-link" href="https://drive.google.com/file/d/1nr2CoECbd8KMAl1qlU046DSo-M2aWyni/view?usp=sharing" target="_blank" rel="noopener">View production reel</a>
       </p>
     </div>
 
     <div class="video-grid">
       <article class="video-card featured reveal">
-        <div class="video-thumb"></div>
+        <a class="video-cover" href="https://www.youtube.com/watch?v=Zo3kTzZrjDw&list=PLpgVhY9jyWA-nPAESkhKkuIetbNOw0cyM&index=10" target="_blank" rel="noopener" aria-label="Watch North Sentinel Island documentary on YouTube">
+          <img src="https://i.ytimg.com/vi/Zo3kTzZrjDw/hqdefault.jpg" alt="North Sentinel Island documentary thumbnail">
+          <span class="video-label"><span>Produced package</span><span>DD India</span></span>
+          <span class="play-button" aria-hidden="true"></span>
+        </a>
         <div class="video-body">
-          <h3>Produced show / broadcast package</h3>
-          <p>Feature your strongest show production credit here: the topic, your role, the editorial challenge and the audience it served.</p>
-          <a href="mailto:ragineesmchaurey@gmail.com?subject=Video%20portfolio%20link">Add video link</a>
+          <h3>A YouTuber. A coconut. A forbidden island.</h3>
+          <p>Raginee Sudhir Chaurey presents a deep-dive documentary on U.S. influencer Mykhailo Polyakov's illegal entry into North Sentinel Island, home to the world's most isolated tribe.</p>
+          <div class="video-note">The report traces why the island is off-limits, what happened during the secret mission, the legal risks, past incidents involving John Chau and Jarawa tribe filming, and why the Sentinelese remain protected from outside contact.</div>
+          <div class="video-actions">
+            <a href="https://www.youtube.com/watch?v=Zo3kTzZrjDw&list=PLpgVhY9jyWA-nPAESkhKkuIetbNOw0cyM&index=10" target="_blank" rel="noopener">Watch on YouTube</a>
+          </div>
         </div>
       </article>
 
       <article class="video-card reveal">
-        <div class="video-thumb"></div>
+        <a class="video-cover" href="https://www.youtube.com/watch?v=5hUQ2Npk0jU&list=PLpgVhY9jyWA-nPAESkhKkuIetbNOw0cyM&index=6" target="_blank" rel="noopener" aria-label="Watch Gaza report on YouTube">
+          <img src="https://i.ytimg.com/vi/5hUQ2Npk0jU/hqdefault.jpg" alt="Gaza report thumbnail">
+          <span class="video-label"><span>Field report</span><span>Global affairs</span></span>
+          <span class="play-button" aria-hidden="true"></span>
+        </a>
         <div class="video-body">
-          <h3>Field video or short documentary</h3>
-          <p>A slot for a field-produced piece, interview-led video, short doc or reporter package.</p>
-          <a href="mailto:ragineesmchaurey@gmail.com?subject=Field%20video%20link">Add link</a>
+          <h3>Hamas' shift amid Israel's expanding Gaza control</h3>
+          <p>An in-depth video report on Hamas' openness to a hostages-for-prisoners deal, Israel's capture of the Morag Corridor, the encirclement of Rafah and the growing humanitarian crisis in Gaza.</p>
+          <div class="video-note">The segment explains military strategy, buffer-zone expansion, global reaction and the blurred line between counterterrorism and collective punishment.</div>
+          <div class="video-actions">
+            <a href="https://www.youtube.com/watch?v=5hUQ2Npk0jU&list=PLpgVhY9jyWA-nPAESkhKkuIetbNOw0cyM&index=6" target="_blank" rel="noopener">Watch on YouTube</a>
+          </div>
         </div>
       </article>
 
       <article class="video-card reveal">
-        <div class="video-thumb"></div>
+        <a class="video-cover" href="https://www.youtube.com/watch?v=hzBRDmqUJ9w&list=PLpgVhY9jyWA-nPAESkhKkuIetbNOw0cyM&index=38" target="_blank" rel="noopener" aria-label="Watch India hyperloop explainer on YouTube">
+          <img src="https://i.ytimg.com/vi/hzBRDmqUJ9w/hqdefault.jpg" alt="India hyperloop explainer thumbnail">
+          <span class="video-label"><span>Explainer</span><span>Technology</span></span>
+          <span class="play-button" aria-hidden="true"></span>
+        </a>
         <div class="video-body">
-          <h3>Explainer / audience video</h3>
-          <p>A slot for a social video, digital explainer or audience-first piece that shows production instincts.</p>
-          <a href="mailto:ragineesmchaurey@gmail.com?subject=Explainer%20video%20link">Add link</a>
+          <h3>India's hyperloop ambition</h3>
+          <p>Raginee Sudhir Chaurey reports on India's push to build the world's longest hyperloop test facility, from a 422-meter test track to a proposed nearly 50-kilometer commercial viability corridor.</p>
+          <div class="video-note">The explainer covers the history of hyperloop technology, IIT Madras collaboration, Ministry of Railways backing and India's bid for global transportation leadership.</div>
+          <div class="video-actions">
+            <a href="https://www.youtube.com/watch?v=hzBRDmqUJ9w&list=PLpgVhY9jyWA-nPAESkhKkuIetbNOw0cyM&index=38" target="_blank" rel="noopener">Watch on YouTube</a>
+          </div>
         </div>
       </article>
     </div>
@@ -1546,7 +1830,7 @@ h2 {
     <div>
       <div class="about-copy">
         <p>I started by covering city halls, election nights, neighborhoods and public systems in Indore. That work taught me that the most important stories often live between what officials say and what records reveal.</p>
-        <p>At Doordarshan and DD India, I learned how to produce for scale: scripting, segment thinking and clear public-facing storytelling. At Outlook India, I worked with digital publishing and audience analytics. At UC Berkeley, I am deepening my practice in data reporting, visualization, scraping and public records work.</p>
+        <p>At Doordarshan and DD India, I worked with the newsroom editorial team and served as an executive producer on <em>Voice of the Global South</em>, building scripts, segments and high-reach broadcast stories for public audiences. At Outlook India, I worked with digital publishing and audience analytics. At UC Berkeley, I am deepening my practice in data reporting, visualization, scraping and public records work.</p>
       </div>
 
       <div class="resume">
@@ -1613,7 +1897,7 @@ h2 {
 
     <div class="contact-links">
       <a class="contact-link" href="mailto:ragineesmchaurey@gmail.com"><small>Email</small>ragineesmchaurey@gmail.com</a>
-      <a class="contact-link" href="https://www.linkedin.com/in/raginee-sudhir-chaurey" target="_blank" rel="noopener"><small>LinkedIn</small>raginee-sudhir-chaurey</a>
+      <a class="contact-link" href="https://www.linkedin.com/in/raginee-sudhir-chaurey/" target="_blank" rel="noopener"><small>LinkedIn</small>raginee-sudhir-chaurey</a>
       <a class="contact-link" href="https://journalism.berkeley.edu/person/raginee_chaurey/" target="_blank" rel="noopener"><small>Berkeley profile</small>UC Berkeley Graduate School of Journalism</a>
       <a class="contact-link" href="https://saja.org/SAJA-2025-Scholarship-Winners" target="_blank" rel="noopener"><small>Recognition</small>2025 SAJA Scholarship Recipient</a>
     </div>
@@ -1684,6 +1968,16 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.18 });
 
 document.querySelectorAll(".reveal").forEach(element => revealObserver.observe(element));
+
+let pointerFrame = null;
+window.addEventListener("pointermove", event => {
+  if (pointerFrame) return;
+  pointerFrame = requestAnimationFrame(() => {
+    document.documentElement.style.setProperty("--mx", `${event.clientX}px`);
+    document.documentElement.style.setProperty("--my", `${event.clientY}px`);
+    pointerFrame = null;
+  });
+});
 
 const filterBtns = document.querySelectorAll(".filter-btn");
 const cards = document.querySelectorAll(".work-card");
